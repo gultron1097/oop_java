@@ -2,17 +2,27 @@ package poker_demo;
 
 import java.util.LinkedList;
 
-public class Player {
+public class Player extends Person{
 	
 	final static int MAX_CARDS_COUNT = 5;
 private LinkedList<Card> cardList;
 	
 	//static int NUM_OF_CARDS = 52;
-	
+
 	public Player()
 	{
+		super();
 		cardList = new LinkedList<Card>();
 	}
+
+	public Player(String name, char gender, int age)
+	{
+		super(name,gender,age);
+		cardList = new LinkedList<Card>();
+
+	}
+	
+	
 	
 	public void put(Card card)
 	{
@@ -30,6 +40,7 @@ private LinkedList<Card> cardList;
 	
 	public void displayCards()
 	{
+		System.out.println("The player " + this.name + "'s cards are listed as follows:");
 		for (int i=0; i<cardList.size(); i++)
 		{
 			Card card = cardList.get(i);
